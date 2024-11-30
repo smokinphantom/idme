@@ -4,11 +4,6 @@ export const Table = styled.table`
   margin: auto; 
   border: 1px solid black;
   border-radius: 4px;
-
-  @media only screen and (max-width: 600px) {
-    display: grid;
-    border: none;
-  }
 `;
 
 export const TableTh = styled.th`
@@ -16,32 +11,8 @@ export const TableTh = styled.th`
   padding: 2px 0px;
 `;
 
-export const TableTr = styled.tr`
-  @media only screen and (max-width: 600px) {
-    border: 1px solid black;
-    margin: 15px;
-    border-radius: 20px;
-  }
-`;
-
 export const TableTd = styled.td`
   padding: 2rem;
-
-  @media only screen and (max-width: 600px) {
-    display: block;
-  }
-`;
-
-export const TableThead = styled.thead`
-  @media only screen and (max-width: 600px) {
-    display: none;
-  }
-`;
-
-export const TableTbody = styled.tbody`
-  @media only screen and (max-width: 600px) {
-    display: grid;
-  }
 `;
 
 export const Card = styled.div`

@@ -1,5 +1,5 @@
 import { FC, ReactElement, useEffect, useState } from "react";
-import { Table, TableTh, TableTd, TableThead, TableTbody, TableTr, Card, CardHeader, CardBody, CardFooter, ImageLogo, Title, Price, Category } from "./styled";
+import { Table, TableTh, TableTd, Card, CardHeader, CardBody, CardFooter, ImageLogo, Title, Price, Category } from "./styled";
 
 //Detect view based on screensize
 const detectMob = () => {
@@ -67,7 +67,7 @@ export const Purchase: FC = (): ReactElement => {
   const displayTable = () => {
     return (
       <Table cellSpacing={0}>
-        <TableThead>
+        <thead>
           <tr>
             <TableTh>Name</TableTh>
             <TableTh>Location</TableTh>
@@ -76,19 +76,19 @@ export const Purchase: FC = (): ReactElement => {
             <TableTh>Description</TableTh>
             <TableTh>Price</TableTh>
           </tr>
-        </TableThead>
-        <TableTbody>
+        </thead>
+        <tbody>
           {purchases.map((purchase, idx) => {
-            return (<TableTr key={idx}>
+            return (<tr key={idx}>
               <TableTd>{purchase.name}</TableTd>
               <TableTd><ImageLogo view={"desktop"} src={purchase.location} alt="Logo" /></TableTd>
               <TableTd>{formatDate(purchase.purchaseDate)}</TableTd>
               <TableTd><Category>{purchase.category}</Category></TableTd>
               <TableTd>{purchase.description}</TableTd>
               <TableTd>{purchase.price}</TableTd>
-            </TableTr>)
+            </tr>)
           })}
-        </TableTbody>
+        </tbody>
       </Table>
     )
   }
